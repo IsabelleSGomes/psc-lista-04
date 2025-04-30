@@ -1,0 +1,36 @@
+programa
+{
+    funcao inicio()
+    {
+        // Declaração das variáveis para armazenar nome e senha
+        cadeia nomeUsuario, senha
+
+        // Inicia um loop 'faca-enquanto'. Executa pelo menos uma vez.
+        faca
+        {
+            // Pede o nome de usuário
+            escreva("Digite o nome de usuário: ")
+            leia(nomeUsuario)
+
+            // Pede a senha
+            escreva("Digite a senha: ")
+            leia(senha)
+
+            // Verifica se a senha é igual ao nome de usuário
+            se (nomeUsuario == senha)
+            {
+                // Se forem iguais, mostra mensagem de erro
+                escreva("\nERRO: A senha não pode ser igual ao nome de usuário!\n")
+                escreva("Por favor, tente novamente.\n\n") // Pula linhas para clareza
+            }
+        }
+        // O loop continua ENQUANTO a senha for igual ao nome de usuário
+        enquanto (nomeUsuario == senha)
+
+        // Quando o loop termina, significa que a senha é diferente do nome.
+        escreva("\nCadastro realizado com sucesso!\n")
+        escreva("Usuário: ", nomeUsuario, "\n")
+        // Por segurança, geralmente não exibimos a senha,mas para confirmar:
+        // escreva("Senha: ", senha, "\n")
+    }
+}
