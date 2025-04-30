@@ -1,0 +1,30 @@
+programa
+{
+    funcao inicio()
+    {
+        // Declaração da variável dentro da função início
+        real nota
+
+        // Loop 'faça-enquanto' é mais comum no Portugol Studio para "repita-até"
+        faca
+        {
+            // Pede a nota ao usuário
+            escreva("Digite uma nota entre 0 e 10: ")
+            leia(nota)
+
+            // Verifica se a nota está fora do intervalo válido (0 a 10)
+            // No Portugol Studio, o bloco do 'se' usa chaves { }
+            se (nota < 0.0 ou nota > 10.0)
+            {
+                // Mostra mensagem de erro se for inválida
+                // Use \n para pular linha dentro do escreva
+                escreva("Valor inválido! A nota deve ser maior ou igual a 0 e menor ou igual a 10.\n")
+                escreva("Por favor, tente novamente.\n")
+            }
+
+        } enquanto (nota < 0.0 ou nota > 10.0)
+
+        // Quando o Loop termina, a nota é válida. Mostra uma mensagem de confirmação.
+        escreva("Nota válida informada: ", nota, "\n")
+    }
+}
