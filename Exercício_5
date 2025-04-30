@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class PopulacaoCrescente {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char repetir;
+
+        do {
+            System.out.print("Informe a população do país A: ");
+            double popA = sc.nextDouble();
+            System.out.print("Informe a taxa de crescimento de A (%): ");
+            double taxaA = sc.nextDouble();
+
+            System.out.print("Informe a população do país B: ");
+            double popB = sc.nextDouble();
+            System.out.print("Informe a taxa de crescimento de B (%): ");
+            double taxaB = sc.nextDouble();
+
+            if (popA <= 0 || popB <= 0 || taxaA <= 0 || taxaB <= 0) {
+                System.out.println("Erro: todos os valores devem ser positivos.");
+            } else {
+                taxaA /= 100;
+                taxaB /= 100;
+                int anos = 0;
+
+                while (popA < popB) {
+                    popA += popA * taxaA;
+                    popB += popB * taxaB;
+                    anos++;
+                }
+
+                System.out.println("Serão necessários " + anos + " anos para que a população A >= B.");
+                System.out.printf("População A: %.0f | População B: %.0f%n", popA, popB);
+            }
+
+            System.out.print("Deseja repetir? (S/N): ");
+            repetir = sc.next().charAt(0);
+        } while (repetir == 'S' || repetir == 's');
+
+        sc.close();
+    }
+}
+
