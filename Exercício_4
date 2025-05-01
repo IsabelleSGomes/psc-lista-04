@@ -1,38 +1,18 @@
-programa 
-{
-// Inclui a biblioteca Matematica para arredondar
-inclua biblioteca Matematica
+public class CrescimentoPopulacional {
+    public static void main(String[] args) {
+        int populacaoA = 80000;
+        int populacaoB = 200000;
+        double taxaA = 0.03;  // 3%
+        double taxaB = 0.015; // 1.5%
+        int anos = 0;
 
-funcao inicio()
-{
-    // Declaração e inicialização das variáveis
-    real popA = 80000.0
-    real popB = 200000.0
-    real taxaCrescimentoA = 0.03 // 3% = 3/100
-    real taxaCrescimentoB = 0.015 // 1.5% = 1.5/100
-    inteiro anos = 0
-
-    // Verifica se A já é maior ou igual (caso de dados iniciais diferentes)
-    se (popA >= popB)
-    {
-        escreva("A população A já é maior ou igual à população B (", anos, " anos).\n")
-    }
-    senao
-    {
-        // Loop contínuo ENQUANTO a população A for MENOR que a população B
-        enquanto (popA < popB)
-        {
-            // Calcula o crescimento e atualiza as populações para o próximo ano
-            popA = popA + (popA * taxaCrescimentoA)
-            popB = popB + (popB * taxaCrescimentoB)
-            anos = anos + 1
+        while (populacaoA < populacaoB) {
+            populacaoA += populacaoA * taxaA;
+            populacaoB += populacaoB * taxaB;
+            anos++;
         }
 
-        // Exibe o número de anos e as populações finais
-        escreva("Serão necessários ", anos, " anos para que a população do país A ultrapasse ou iguale a população do país B.\n")
-        escreva("Após ", anos, " anos:\n")
-        escreva("População A: ", arredondar(popA), " habitantes.\n")
-        escreva("População B: ", arredondar(popB), " habitantes.\n")
+        System.out.println("Serão necessários " + anos + " anos para que a população do país A "
+                + "ultrapasse ou iguale a população do país B.");
     }
-}
 }
